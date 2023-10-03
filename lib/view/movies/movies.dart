@@ -15,6 +15,8 @@ class _moviesState extends State<movies> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
+
+      
       length: 2,
       child: Scaffold(
         backgroundColor: Colors.black,
