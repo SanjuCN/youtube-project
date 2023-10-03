@@ -11,12 +11,14 @@ class browse extends StatefulWidget {
 class _browseState extends State<browse> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.black,
-      body:SingleChildScrollView(
-        child: Column(children: [
+    return Scaffold(
+        backgroundColor: Colors.black,
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
               Padding(
                 padding: const EdgeInsets.only(
-                  right: 70,
+                  right: 180,
                 ),
                 child: Text(
                   "movies",
@@ -41,16 +43,20 @@ class _browseState extends State<browse> {
                               width: 103,
                               height: 160,
                               decoration: BoxDecoration(
-                                  
                                   image: DecorationImage(
                                       image: AssetImage(
                                           database.movies[index]["image"]),
                                       fit: BoxFit.cover)),
                             ),
-                             Padding(
+                            Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Container(width: 103,height: 50,
-                                child: Text(database.movies[index]["text"],style: TextStyle(color: Colors.white),)),
+                              child: Container(
+                                  width: 103,
+                                  height: 50,
+                                  child: Text(
+                                    database.movies[index]["text"],
+                                    style: TextStyle(color: Colors.white),
+                                  )),
                             )
                           ],
                         ),
@@ -89,14 +95,19 @@ class _browseState extends State<browse> {
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   image: DecorationImage(
-                                      image:
-                                          AssetImage(database.movies[index]["image"]),
+                                      image: AssetImage(
+                                          database.movies[index]["image"]),
                                       fit: BoxFit.cover)),
                             ),
-                             Padding(
+                            Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Container(width: 103,height: 50,
-                                child: Text(database.movies[index]["text"],style: TextStyle(color: Colors.white),)),
+                              child: Container(
+                                  width: 103,
+                                  height: 50,
+                                  child: Text(
+                                    database.movies[index]["text"],
+                                    style: TextStyle(color: Colors.white),
+                                  )),
                             )
                           ],
                         ),
@@ -135,14 +146,19 @@ class _browseState extends State<browse> {
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   image: DecorationImage(
-                                      image:
-                                          AssetImage(database.movies[index]["image"]),
+                                      image: AssetImage(
+                                          database.movies[index]["image"]),
                                       fit: BoxFit.cover)),
                             ),
-                             Padding(
+                            Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Container(width: 103,height: 50,
-                                child: Text(database.movies[index]["text"],style: TextStyle(color: Colors.white),)),
+                              child: Container(
+                                  width: 103,
+                                  height: 50,
+                                  child: Text(
+                                    database.movies[index]["text"],
+                                    style: TextStyle(color: Colors.white),
+                                  )),
                             )
                           ],
                         ),
@@ -181,14 +197,19 @@ class _browseState extends State<browse> {
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   image: DecorationImage(
-                                      image:
-                                          AssetImage(database.movies[index]["image"]),
+                                      image: AssetImage(
+                                          database.movies[index]["image"]),
                                       fit: BoxFit.cover)),
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Container(width: 103,height: 50,
-                                child: Text(database.movies[index]["text"],style: TextStyle(color: Colors.white),)),
+                              child: Container(
+                                  width: 103,
+                                  height: 50,
+                                  child: Text(
+                                    database.movies[index]["text"],
+                                    style: TextStyle(color: Colors.white),
+                                  )),
                             )
                           ],
                         ),
@@ -231,10 +252,15 @@ class _browseState extends State<browse> {
                                           database.movies[index]["image"]),
                                       fit: BoxFit.cover)),
                             ),
-                             Padding(
+                            Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Container(width: 103,height: 50,
-                                child: Text(database.movies[index]["text"],style: TextStyle(color: Colors.white),)),
+                              child: Container(
+                                  width: 103,
+                                  height: 50,
+                                  child: Text(
+                                    database.movies[index]["text"],
+                                    style: TextStyle(color: Colors.white),
+                                  )),
                             )
                           ],
                         ),
@@ -277,17 +303,23 @@ class _browseState extends State<browse> {
                                           database.movies[index]["image"]),
                                       fit: BoxFit.cover)),
                             ),
-                             Padding(
+                            Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Container(width: 103,height: 50,
-                                child: Text(database.movies[index]["text"],style: TextStyle(color: Colors.white),)),
+                              child: Container(
+                                  width: 103,
+                                  height: 50,
+                                  child: Text(
+                                    database.movies[index]["text"],
+                                    style: TextStyle(color: Colors.white),
+                                  )),
                             )
                           ],
                         ),
                       );
-                    })),),],),
-      )
-      
-    );
+                    })),
+              ),
+            ],
+          ),
+        ));
   }
 }

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:youtube/view/create/create.dart';
 import 'package:youtube/view/home_screen/home_screen.dart';
-import 'package:youtube/view/profile/profile.dart';
 import 'package:youtube/view/shorts/shorts.dart';
 import 'package:youtube/view/subcription/sub.dart';
+import 'package:youtube/view/youtube_library/youtube_library.dart';
 
 class bottom_navi extends StatefulWidget {
   const bottom_navi({super.key});
@@ -16,9 +17,11 @@ class _bottom_naviState extends State<bottom_navi> {
   @override
   Widget build(BuildContext context) {
     List _screen =[home_screen(),
-    profile(),
+    short(index: _selectedindex),
+    create(),
     sub_screen(),
-    short(index: _selectedindex),];
+    youtube_library(),
+    ];
     return Scaffold(body:_screen[_selectedindex],
     
       bottomNavigationBar:BottomNavigationBar( type: BottomNavigationBarType.fixed,
@@ -28,23 +31,10 @@ class _bottom_naviState extends State<bottom_navi> {
         unselectedFontSize: 10,
         backgroundColor: Colors.black,
 
-        items:[BottomNavigationBarItem(icon: InkWell(onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder:(context) =>home_screen() ,));
-        },
-          child: Icon(Icons.home,color:Colors.white)),label:'home'),
-      BottomNavigationBarItem(icon: InkWell(onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder:(context) =>short(index: 
-          _selectedindex) ,));
-        },
-        child: Icon(Icons.explore,color:Colors.white)),label:'explore'),
-      BottomNavigationBarItem(icon: InkWell(onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder:(context) =>short(index:_selectedindex) ,));
-        },
-        child: Icon(Icons.add_circle_outline,color:Colors.white)),label:'add_circle_outline'),
-       BottomNavigationBarItem(icon: InkWell(onTap: () {
-          Navigator.push(context, MaterialPageRoute(builder:(context) =>sub_screen() ,));
-        },
-        child: Icon(Icons.subscriptions,color:Colors.white)),label:'subscriptions'),
+        items:[BottomNavigationBarItem(icon: Icon(Icons.home,color:Colors.white),label:'home'),
+      BottomNavigationBarItem(icon: Icon(Icons.explore,color:Colors.white),label:'explore'),
+      BottomNavigationBarItem(icon: Icon(Icons.add_circle_outline,color:Colors.white),label:'create'),
+       BottomNavigationBarItem(icon: Icon(Icons.subscriptions,color:Colors.white),label:'subscriptions'),
         BottomNavigationBarItem(icon: Icon(Icons.video_library,color:Colors.white,),label:'library'),
       ],
 

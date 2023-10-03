@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:youtube/view/home_screen/home_screen.dart';
-
+import 'package:youtube/view/bottom%20navigation/bottom_navi.dart';
 
 class splash_screen extends StatefulWidget {
   const splash_screen({super.key});
@@ -17,7 +16,7 @@ class _splash_screenState extends State<splash_screen> {
         .then((value) => Navigator.pushReplacement(
             context,
             MaterialPageRoute(
-              builder: (context) => home_screen(),
+              builder: (context) => bottom_navi(),
             )));
   }
 
@@ -28,8 +27,12 @@ class _splash_screenState extends State<splash_screen> {
         child: Container(
           height: 270,
           width: 298,
-          child: Image.network("https://static.vecteezy.com/system/resources/previews/018/930/572/non_2x/youtube-logo-youtube-icon-transparent-free-png.png",fit:BoxFit.fill,),
+          child: Image.network(
+            "https://static.vecteezy.com/system/resources/previews/018/930/572/non_2x/youtube-logo-youtube-icon-transparent-free-png.png",
+            fit: BoxFit.fill,
+          ),
         ),
-    ),
-);}
+      ),
+    );
+  }
 }

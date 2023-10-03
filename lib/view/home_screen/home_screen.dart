@@ -28,27 +28,27 @@ class _home_screenState extends State<home_screen> {
             height: 35, width: 120, child: Image.asset("assets/logo.png")),
         actions: [
           InkWell(
-              onTap: () {
-                showDialog(
-              context: context,
-              builder: (BuildContext context) {
-                return AlertDialog(
-                  title: Text('Connect to a device'),
-                  content: Text("No device found"),
-                  actions: <Widget>[
-                    TextButton(
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: Text('Close'),
-                    ),
-                  ],
-                );
-              },
-            );
-              },
-              child:  Icon(Icons.cast),
-),
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return AlertDialog(
+                    title: Text('Connect to a device'),
+                    content: Text("No device found"),
+                    actions: <Widget>[
+                      TextButton(
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                        child: Text('Close'),
+                      ),
+                    ],
+                  );
+                },
+              );
+            },
+            child: Icon(Icons.cast),
+          ),
           SizedBox(
             width: 10,
           ),
@@ -93,74 +93,6 @@ class _home_screenState extends State<home_screen> {
           )
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _selectedindex,
-        onTap: (i) => setState(() => _selectedindex = i),
-        selectedFontSize: 13.0,
-        unselectedFontSize: 10,
-        backgroundColor: Colors.black,
-        items: [
-          BottomNavigationBarItem(
-              icon: InkWell(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => home_screen(),
-                        ));
-                  },
-                  child: Icon(Icons.home, color: Colors.white)),
-              label: 'home'),
-          BottomNavigationBarItem(
-              icon: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => short(index: _selectedindex),
-                        ));
-                  },
-                  child: Icon(Icons.explore, color: Colors.white)),
-              label: 'explore'),
-          BottomNavigationBarItem(
-              icon: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => short(index: _selectedindex),
-                        ));
-                  },
-                  child: Icon(Icons.add_circle_outline, color: Colors.white)),
-              label: 'add_circle_outline'),
-          BottomNavigationBarItem(
-              icon: InkWell(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => sub_screen(),
-                        ));
-                  },
-                  child: Icon(Icons.subscriptions, color: Colors.white)),
-              label: 'subscriptions'),
-          BottomNavigationBarItem(
-              icon: InkWell(
-                  onTap: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => youtube_library(),
-                        ));
-                  },
-                  child: Icon(
-                    Icons.video_library,
-                    color: Colors.white,
-                  )),
-              label: 'library'),
-        ],
-      ),
       body: Column(
         children: [
           Container(
@@ -189,14 +121,19 @@ class _home_screenState extends State<home_screen> {
                 padding: const EdgeInsets.all(5),
                 child: Column(
                   children: [
-                    InkWell(onTap: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => videoscreen(index:_selectedindex),));
-                    },
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  videoscreen(index: _selectedindex),
+                            ));
+                      },
                       child: Container(
                         height: 200,
                         width: double.infinity,
                         padding: EdgeInsets.all(5),
-                        
                         child: Image.asset(imageconstant.mylist[index],
                             fit: BoxFit.fitWidth),
                       ),
